@@ -19,6 +19,9 @@ public class TrainMove : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        
+        if(col.gameObject.tag == "StraightNode") {
+            transform.position = col.gameObject.GetComponent<NodeManager>().GetNextNode().transform.position;
+            Debug.Log(col.name);
+        }
     }
 }
