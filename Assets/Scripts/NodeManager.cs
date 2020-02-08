@@ -20,4 +20,8 @@ public class NodeManager : MonoBehaviour
     {
         
     }
+
+    public GameObject GetNextNode() {
+        return NextNode;
+    }
 }
