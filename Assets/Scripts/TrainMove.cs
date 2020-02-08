@@ -6,21 +6,29 @@ public class TrainMove : MonoBehaviour
 {
     [SerializeField]
     private GameObject CurrentNode;
-    // Start is called before the first frame update
+    private GameObject NextNode;
+
+    public float TrainSpeed;
+    public float RotationSpeed;
     void Start()
     {
         transform.position = CurrentNode.transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (NextNode != null) {
+            transform.position = Vector3.MoveTowards(transform.position, NextNode.transform.position, TrainSpeed * Time.deltaTime);
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "StraightNode") {
-            transform.position = col.gameObject.GetComponent<NodeManager>().GetNextNode().transform.position;
+            CurrentNode = col.gameObject;
+            NextNode = col.gameObject.GetComponent<NodeManager>().GetNextNode();
+            //transform.position = NextNode.transform.position;
             Debug.Log(col.name);
         }
     }
