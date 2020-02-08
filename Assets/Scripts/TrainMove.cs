@@ -19,7 +19,14 @@ public class TrainMove : MonoBehaviour
     void FixedUpdate()
     {
         if (NextNode != null) {
+            //Move to next node
             transform.position = Vector3.MoveTowards(transform.position, NextNode.transform.position, TrainSpeed * Time.deltaTime);
+
+            //Look at the next node
+            Vector3 targetPoint = new Vector3(NextNode.transform.position.x, NextNode.transform.position.y, NextNode.transform.position.z) - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint, Vector3.up);
+            targetRotation = new Quaternion(0, 0, targetRotation.z, targetRotation.w);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * RotationSpeed);
         }
 
     }
