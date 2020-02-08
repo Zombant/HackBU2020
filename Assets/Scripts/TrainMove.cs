@@ -32,11 +32,16 @@ public class TrainMove : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
+        //If the train hits a straight node
         if(col.gameObject.tag == "StraightNode") {
             CurrentNode = col.gameObject;
             NextNode = col.gameObject.GetComponent<NodeManager>().GetNextNode();
-            //transform.position = NextNode.transform.position;
             Debug.Log(col.name);
+        } else if(col.gameObject.tag == "SwitchNode") {
+
+
+        } else if(col.gameObject.tag == "ExitNode") {
+
         }
     }
 }
