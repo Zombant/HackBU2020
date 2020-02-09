@@ -7,6 +7,8 @@ public class ToggleSwitch : MonoBehaviour {
 
     public bool SwitchActive;
     public GameObject ControlNode;
+
+    
     void Start() {
 
     }
@@ -21,6 +23,7 @@ public class ToggleSwitch : MonoBehaviour {
             if (hit.collider != null && hit.collider.gameObject == gameObject) {
                 ControlNode.GetComponent<NodeManager>().ToggleActiveRail();
                 SwitchActive = !SwitchActive;
+                
             }
         }
         if (SwitchActive) {
@@ -28,5 +31,6 @@ public class ToggleSwitch : MonoBehaviour {
         } else if (!SwitchActive) {
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
+
     }
 }

@@ -16,11 +16,6 @@ public class NodeManager : MonoBehaviour
     public GameObject ActiveNode;
     
 
-    //Only for fourth switch rail
-    public GameObject SwitchRail2;
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -46,21 +41,12 @@ public class NodeManager : MonoBehaviour
     //Only for Switch Rails
     public void ToggleActiveRail() {
         Debug.Log("MEOW");
-        if(SwitchRail2 == null) {
-            if (ActiveNode == PossibleSwitchNodes[0]) {
-                ActiveNode = PossibleSwitchNodes[1];
-            } else if (ActiveNode == PossibleSwitchNodes[1]) {
-                ActiveNode = PossibleSwitchNodes[0];
-            }
+        if (ActiveNode == PossibleSwitchNodes[0]) {
+            ActiveNode = PossibleSwitchNodes[1];
+        } else if (ActiveNode == PossibleSwitchNodes[1]) {
+            ActiveNode = PossibleSwitchNodes[0];
         }
-        if(SwitchRail2 != null) {
-            if (ActiveNode == PossibleSwitchNodes[0]) {
-                ActiveNode = PossibleSwitchNodes[1];
-            } else if (ActiveNode == PossibleSwitchNodes[1]) {
-                ActiveNode = PossibleSwitchNodes[2];
-            } else if (ActiveNode == PossibleSwitchNodes[2]) {
-                ActiveNode = PossibleSwitchNodes[0];
-            }
-        }
+        
+        
     }
 }
