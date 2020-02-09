@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentNode: {fileID: 0}
+  NextNode: {fileID: 0}
   TrainSpeed: 3
   RotationSpeed: 10
 --- !u!50 &918439786
