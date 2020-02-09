@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7137958250061578209}
   - component: {fileID: 5983215823117853562}
   - component: {fileID: 918439786}
+  - component: {fileID: 7186755883464433756}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentNode: {fileID: 0}
-  TrainSpeed: 1
+  TrainSpeed: 3
   RotationSpeed: 10
 --- !u!50 &918439786
 Rigidbody2D:
@@ -146,3 +147,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &7186755883464433756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865517186986579541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4e54337e533ba41b2526943e14c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntranceNodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

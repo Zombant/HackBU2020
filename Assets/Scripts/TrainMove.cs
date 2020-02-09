@@ -6,19 +6,20 @@ public class TrainMove : MonoBehaviour
 {
     [SerializeField]
     private GameObject CurrentNode;
+    [SerializeField]
     private GameObject NextNode;
 
     public float TrainSpeed;
     public float RotationSpeed;
     void Start()
     {
-        transform.position = CurrentNode.transform.position;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (NextNode != null) {
+        if (CurrentNode != null && NextNode != null) {
             //Move to next node
             transform.position = Vector3.MoveTowards(transform.position, NextNode.transform.position, TrainSpeed * Time.deltaTime);
 
@@ -43,6 +44,17 @@ public class TrainMove : MonoBehaviour
         } else if(col.gameObject.tag == "ExitNode") {
             Debug.Log("DESTROYED");
             Destroy(gameObject);
+        } else if(col.gameObject.tag == "EntranceNode") {
+            CurrentNode = col.gameObject;
+            NextNode = col.gameObject.GetComponent<NodeManager>().GetNextNode();
         }
+    }
+
+    public void SetCurrentNode(GameObject node) {
+        CurrentNode = node;
+    }
+
+    public void SetNextNode(GameObject node) {
+        NextNode = node;
     }
 }

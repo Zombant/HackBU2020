@@ -9,6 +9,7 @@ TagManager:
   - SwitchRail
   - ExitNode
   - EntranceNode
+  - TrainCreationLocation
   layers:
   - Default
   - TransparentFX
