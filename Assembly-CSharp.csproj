@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NodeManager.cs" />
+    <Compile Include="Assets\Scripts\ToggleSwitch.cs" />
     <Compile Include="Assets\Scripts\TrainMove.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/antho/UnityProjects/HackBU2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

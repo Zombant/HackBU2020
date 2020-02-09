@@ -38,8 +38,8 @@ public class TrainMove : MonoBehaviour
             NextNode = col.gameObject.GetComponent<NodeManager>().GetNextNode();
             Debug.Log(col.name);
         } else if(col.gameObject.tag == "SwitchNode") {
-
-
+            CurrentNode = col.gameObject;
+            NextNode = col.gameObject.GetComponent<NodeManager>().GetActiveNode();
         } else if(col.gameObject.tag == "ExitNode") {
 
         }
