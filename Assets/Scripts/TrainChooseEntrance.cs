@@ -18,9 +18,12 @@ public class TrainChooseEntrance : MonoBehaviour
 
     GameObject GameManager;
 
+    private bool isFinished;
+
     // Start is called before the first frame update
     void Start()
     {
+        isFinished = false;
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         TheSpotWhereTheRailMountedPassengerCarryingApparatusBeginsItsJourneyForWonderAndDiscovery = GameObject.FindGameObjectWithTag("TrainCreationLocation");
@@ -31,11 +34,18 @@ public class TrainChooseEntrance : MonoBehaviour
         trainMove.SetCurrentNode(EntranceNodes[EntranceToPick]);
         trainMove.SetNextNode(EntranceNodes[EntranceToPick]);
 
-        int colorID = Random.Range(0, 4);
+        int colorID;
+        if(EntranceNodes[EntranceToPick].GetComponent<NodeManager>().colorID == 3) {
+            colorID = Random.Range(0, 3);
+        } else {
+            colorID = Random.Range(0, 4);
+        }
+
+        
         switch (colorID) {
             case 0:
-                color = "green";
-                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                color = "yellow";
+                gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 break;
             case 1:
                 color = "blue";
@@ -46,8 +56,8 @@ public class TrainChooseEntrance : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                 break;
             case 3:
-                color = "yellow";
-                gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                color = "green";
+                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                 break;
         }
 
@@ -59,9 +69,10 @@ public class TrainChooseEntrance : MonoBehaviour
         
     }
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.GetComponent<NodeManager>() == null || collision.GetType() == typeof(CapsuleCollider2D))
+        if (collision.gameObject.GetComponent<NodeManager>() == null)
             return;
-        if(collision.gameObject.GetComponent<NodeManager>().PlatformColor == color) {
+        if(collision.gameObject.GetComponent<NodeManager>().PlatformColor == color && !isFinished) {
+            isFinished = true;
             GameManager.GetComponent<PointCounter>().Score += 100;
             gameObject.GetComponent<TrainMove>().isEnabled = false;
             transform.rotation = Quaternion.identity;

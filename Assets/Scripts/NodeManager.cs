@@ -17,6 +17,7 @@ public class NodeManager : MonoBehaviour
 
     //Only for platform nodes
     public string PlatformColor;
+    public int colorID;
     
 
     // Start is called before the first frame update
