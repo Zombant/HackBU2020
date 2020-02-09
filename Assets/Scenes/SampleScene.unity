@@ -2264,6 +2264,7 @@ GameObject:
   - component: {fileID: 691480392}
   - component: {fileID: 691480394}
   - component: {fileID: 691480395}
+  - component: {fileID: 691480396}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2311,6 +2312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc68867bd4342f64bb254e7bf1ec7bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverPrefab: {fileID: 6486996025540784324, guid: da4c8ae64eb4aec43a21468d8406291a,
+    type: 3}
 --- !u!114 &691480395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2327,6 +2330,194 @@ MonoBehaviour:
   PointsPerTrain: 10
   MaxScore: 99999
   ScoreCounter: {fileID: 1190616075}
+--- !u!114 &691480396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691480391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a700ca2523b5444a0c76a2f51ec1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundsList:
+  - audioClip: {fileID: 8300000, guid: f7baed07e1112c34e95adc6025f4e3b8, type: 3}
+    volume: 100
+    pitch: 1
+    name: music1
+    source: {fileID: 0}
+    loop: 1
+    isMusic: 1
+  - audioClip: {fileID: 8300000, guid: 07b2dd630d97cbf4da12f1ee8c77e081, type: 3}
+    volume: 100
+    pitch: 1
+    name: music2
+    source: {fileID: 0}
+    loop: 1
+    isMusic: 1
+  - audioClip: {fileID: 8300000, guid: b26bbe119bfe29f4492857cc64c7d297, type: 3}
+    volume: 100
+    pitch: 1
+    name: music3
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 1
+  - audioClip: {fileID: 8300000, guid: 9c60fae0a3503644ebce2fd165d400b0, type: 3}
+    volume: 100
+    pitch: 1
+    name: false1
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: c95691af8f5c42d48965bc6d5745b503, type: 3}
+    volume: 100
+    pitch: 1
+    name: false2
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 15e38182a4d6bcd4188172863c21bc6f, type: 3}
+    volume: 100
+    pitch: 1
+    name: false3
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: eabe7031cd7a3f846a332ed67bf8fb3f, type: 3}
+    volume: 100
+    pitch: 1
+    name: false4
+    source: {fileID: 0}
+    loop: 1
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 639a16a3431ce6843badce7f0277d0e7, type: 3}
+    volume: 100
+    pitch: 1
+    name: false5
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 0e55fb7de13841f40bbe02edab854786, type: 3}
+    volume: 100
+    pitch: 1
+    name: false6
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: c8f5e6bb6afc9094e90fad8287f3a59e, type: 3}
+    volume: 100
+    pitch: 1
+    name: false7
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: e0377b4ec3f8abb43bf9f29d50f222dc, type: 3}
+    volume: 100
+    pitch: 1
+    name: false8
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 2d1cd8ebda4e66646b1a9308bca5cb49, type: 3}
+    volume: 100
+    pitch: 1
+    name: true1
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: a5090d74b275bc146800e08700f37911, type: 3}
+    volume: 100
+    pitch: 1
+    name: true2
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: d444155af126bb547b619e8c17c206d4, type: 3}
+    volume: 100
+    pitch: 1
+    name: true3
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 9214ab7c7c026e24384741b1f0fdec19, type: 3}
+    volume: 100
+    pitch: 1
+    name: true4
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 3f96f080b7d7deb49be83f4e691c8546, type: 3}
+    volume: 100
+    pitch: 1
+    name: true5
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 4eb04af97dcfa8c49a80e2490e4f1d44, type: 3}
+    volume: 100
+    pitch: 1
+    name: true6
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: d03af34dad959b34b983c958e76e0492, type: 3}
+    volume: 100
+    pitch: 1
+    name: true7
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 4f50b20006dc676458a077acf857df15, type: 3}
+    volume: 100
+    pitch: 1
+    name: true8
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 3715e93979e1d0c498541561b66d2219, type: 3}
+    volume: 100
+    pitch: 1
+    name: true9
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 6bcf46f78e2b3814ebd3d0f758c856c3, type: 3}
+    volume: 100
+    pitch: 1
+    name: true10
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 4398715b8b6b0ce42acea99383316a8a, type: 3}
+    volume: 100
+    pitch: 1
+    name: true11
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: 22b70947bc16ed64e972bc1e1e3dff6c, type: 3}
+    volume: 100
+    pitch: 1
+    name: true12
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: b8f332fa674e3dc4b918739654d480fc, type: 3}
+    volume: 100
+    pitch: 1
+    name: true13
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
+  - audioClip: {fileID: 8300000, guid: f7ec74c99f2edee4d9fce2100cb6288f, type: 3}
+    volume: 1000000
+    pitch: 1
+    name: gameover
+    source: {fileID: 0}
+    loop: 0
+    isMusic: 0
 --- !u!1 &707409036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5227731397043833303, guid: 85bf98e40a6c3d64dbcb4ff3f290558b,

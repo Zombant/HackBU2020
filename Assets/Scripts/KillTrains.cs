@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KillTrains : MonoBehaviour
 {
+    public GameObject GameOverPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,10 @@ public class KillTrains : MonoBehaviour
     }
 
     public void GameOver() {
-        //TODO: Thomas the train jumpscare
+        GameObject[] trains = GameObject.FindGameObjectsWithTag("Train");
+        foreach(GameObject train in trains) {
+            Destroy(train);
+        }
+        Instantiate(GameOverPrefab);
     }
 }
