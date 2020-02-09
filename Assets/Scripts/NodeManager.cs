@@ -21,7 +21,7 @@ public class NodeManager : MonoBehaviour
     {
         //Set initial active rail to the first node
         if(NumberOfOptions > 0)
-            ActiveNode = PossibleSwitchNodes[0];
+            ActiveNode = PossibleSwitchNodes[1];
     }
 
     // Update is called once per frame

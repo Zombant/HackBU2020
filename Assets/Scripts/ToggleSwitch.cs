@@ -10,7 +10,7 @@ public class ToggleSwitch : MonoBehaviour {
 
     
     void Start() {
-
+        SwitchActive = true;
     }
 
     // Update is called once per frame
@@ -26,10 +26,10 @@ public class ToggleSwitch : MonoBehaviour {
                 
             }
         }
-        if (SwitchActive) {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(.3937f, .624f, .4571f);
-        } else if (!SwitchActive) {
+        if (!SwitchActive) {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(.345f, .349f, .345f);
+        } else if (SwitchActive) {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(.3937f, .624f, .4571f);
         }
 
     }
