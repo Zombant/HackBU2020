@@ -59,7 +59,6 @@ public class TrainMove : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<KillTrains>().GameOver();
         }
 
-        if (col.GetType() != (new CapsuleCollider2D()).GetType()) {
             //If the train hits a straight node
             if (col.gameObject.tag == "StraightNode") {
                 CurrentNode = col.gameObject;
@@ -77,7 +76,7 @@ public class TrainMove : MonoBehaviour
                 CurrentNode = col.gameObject;
                 NextNode = col.gameObject.GetComponent<NodeManager>().GetNextNode();
             }
-        }
+        
     }
 
     public void SetCurrentNode(GameObject node) {

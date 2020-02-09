@@ -20,6 +20,8 @@ public class TrainChooseEntrance : MonoBehaviour
 
     private bool isFinished;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,7 @@ public class TrainChooseEntrance : MonoBehaviour
             return;
         if(collision.gameObject.GetComponent<NodeManager>().PlatformColor == color && !isFinished) {
             isFinished = true;
-            GameManager.GetComponent<PointCounter>().Score += 100;
+            GameManager.GetComponent<PointCounter>().AddPoints();
             gameObject.GetComponent<TrainMove>().isEnabled = false;
             transform.rotation = Quaternion.identity;
             Invoke("EnableTrain", 2f);
