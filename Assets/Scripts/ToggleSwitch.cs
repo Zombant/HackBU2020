@@ -27,9 +27,9 @@ public class ToggleSwitch : MonoBehaviour {
             }
         }
         if (SwitchActive) {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(.3937f, .624f, .4571f);
         } else if (!SwitchActive) {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(.345f, .349f, .345f);
         }
 
     }
