@@ -5,7 +5,8 @@ using UnityEngine;
 public class ToggleSwitch : MonoBehaviour {
     // Start is called before the first frame update
 
-    private bool SwitchActive;
+    public bool SwitchActive;
+    public GameObject ControlNode;
     void Start() {
 
     }
@@ -17,15 +18,11 @@ public class ToggleSwitch : MonoBehaviour {
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider != null && hit.collider.tag == "SwitchRail") {
-                hit.collider.gameObject.GetComponent<NodeManager>().ToggleActiveRail();
-                ToggleActive();
+            if (hit.collider != null && hit.collider.gameObject == gameObject) {
+                ControlNode.GetComponent<NodeManager>().ToggleActiveRail();
+                SwitchActive = !SwitchActive;
             }
         }
-    }
-
-    void ToggleActive() {
-        SwitchActive = !SwitchActive;
         if (SwitchActive) {
             gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         } else if (!SwitchActive) {

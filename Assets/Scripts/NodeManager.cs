@@ -47,14 +47,20 @@ public class NodeManager : MonoBehaviour
     public void ToggleActiveRail() {
         Debug.Log("MEOW");
         if(SwitchRail2 == null) {
-            if (ActiveNode.Equals(PossibleSwitchNodes[0])) {
+            if (ActiveNode == PossibleSwitchNodes[0]) {
                 ActiveNode = PossibleSwitchNodes[1];
-            } else if (ActiveNode.Equals(PossibleSwitchNodes[1])) {
+            } else if (ActiveNode == PossibleSwitchNodes[1]) {
                 ActiveNode = PossibleSwitchNodes[0];
             }
         }
         if(SwitchRail2 != null) {
-
+            if (ActiveNode == PossibleSwitchNodes[0]) {
+                ActiveNode = PossibleSwitchNodes[1];
+            } else if (ActiveNode == PossibleSwitchNodes[1]) {
+                ActiveNode = PossibleSwitchNodes[2];
+            } else if (ActiveNode == PossibleSwitchNodes[2]) {
+                ActiveNode = PossibleSwitchNodes[0];
+            }
         }
     }
 }
