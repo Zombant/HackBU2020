@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5983215823117853562}
   - component: {fileID: 918439786}
   - component: {fileID: 7186755883464433756}
+  - component: {fileID: 8799626813369767236}
   m_Layer: 0
   m_Name: Train
-  m_TagString: Untagged
+  m_TagString: Train
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +128,7 @@ MonoBehaviour:
   NextNode: {fileID: 0}
   TrainSpeed: 3
   RotationSpeed: 10
+  isEnabled: 0
 --- !u!50 &918439786
 Rigidbody2D:
   serializedVersion: 4
@@ -164,3 +166,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!70 &8799626813369767236
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865517186986579541}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.022699859, y: 0.19437113}
+  m_Size: {x: 9.511288, y: 1.8720657}
+  m_Direction: 1

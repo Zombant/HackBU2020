@@ -20,7 +20,6 @@ public class CreateTrains : MonoBehaviour
     }
 
     public void createNewTrain() {
-        Debug.Log("FOTIS");
         Instantiate(Train);
     }
 

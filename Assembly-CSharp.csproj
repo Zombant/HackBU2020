@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PointCounter.cs" />
     <Compile Include="Assets\Scripts\CreateTrains.cs" />
+    <Compile Include="Assets\Scripts\KillTrains.cs" />
     <Compile Include="Assets\Scripts\NodeManager.cs" />
     <Compile Include="Assets\Scripts\ToggleSwitch.cs" />
     <Compile Include="Assets\Scripts\TrainChooseEntrance.cs" />

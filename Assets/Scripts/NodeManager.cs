@@ -14,6 +14,9 @@ public class NodeManager : MonoBehaviour
     public List<GameObject> PossibleSwitchNodes;
     public GameObject SwitchRail;
     public GameObject ActiveNode;
+
+    //Only for platform nodes
+    public string PlatformColor;
     
 
     // Start is called before the first frame update
@@ -40,7 +43,6 @@ public class NodeManager : MonoBehaviour
 
     //Only for Switch Rails
     public void ToggleActiveRail() {
-        Debug.Log("MEOW");
         if (ActiveNode == PossibleSwitchNodes[0]) {
             ActiveNode = PossibleSwitchNodes[1];
         } else if (ActiveNode == PossibleSwitchNodes[1]) {
