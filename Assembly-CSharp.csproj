@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\NodeManager.cs" />
     <Compile Include="Assets\Scripts\PointCounter.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\ToggleSwitch.cs" />
     <Compile Include="Assets\Scripts\TrainChooseEntrance.cs" />
     <Compile Include="Assets\Scripts\TrainMove.cs" />
