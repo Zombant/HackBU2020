@@ -41,7 +41,8 @@ public class TrainMove : MonoBehaviour
             CurrentNode = col.gameObject;
             NextNode = col.gameObject.GetComponent<NodeManager>().GetActiveNode();
         } else if(col.gameObject.tag == "ExitNode") {
-
+            Debug.Log("DESTROYED");
+            Destroy(gameObject);
         }
     }
 }
