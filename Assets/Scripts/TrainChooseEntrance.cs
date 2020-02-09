@@ -80,6 +80,9 @@ public class TrainChooseEntrance : MonoBehaviour
             transform.rotation = Quaternion.identity;
             Invoke("EnableTrain", 2f);
         }
+        if(collision.gameObject.GetComponent<NodeManager>().NodeType == "exit" && isFinished == false) {
+            GameManager.GetComponent<PointCounter>().RemovePoints();
+        }
     }
 
     public void EnableTrain() {

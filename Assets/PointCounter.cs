@@ -29,4 +29,15 @@ public class PointCounter : MonoBehaviour
         if(Score < MaxScore)
             Score += PointsPerTrain;
     }
+    public void RemovePoints() {
+
+        int tempScore = Score;
+        if (tempScore >= 0)
+            tempScore -= PointsPerTrain / 2;
+        if(tempScore < 0) {
+            Score = 0;
+        } else {
+            Score = tempScore;
+        }
+    }
 }
